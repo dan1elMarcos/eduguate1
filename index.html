@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGuate - Educación para Todos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        accent: '#06B6D4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900">EduGuate</span>
+            </a>
+
+            <nav class="hidden items-center gap-6 md:flex">
+                <a href="materias.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Materias</a>
+                <a href="evaluaciones.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Evaluaciones</a>
+                <a href="tutorias.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Tutorías</a>
+                <a href="foro.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Comunidad</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-medium text-gray-600">Acceso Público</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="w-full bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
+        <div class="container mx-auto px-4">
+            <div class="mx-auto max-w-3xl text-center">
+                <h1 class="mb-6 text-5xl font-bold leading-tight text-gray-900 md:text-6xl">
+                    Educación Gratuita y Accesible para Todos
+                </h1>
+                <p class="mb-8 text-xl text-gray-600">
+                    Accede a contenidos educativos de calidad, conecta con tutores y aprende a tu propio ritmo. 
+                    EduGuate está diseñado especialmente para estudiantes en zonas rurales de Guatemala.
+                </p>
+                <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <a href="materias.html" class="rounded-md bg-primary px-6 py-3 text-lg font-medium text-white hover:bg-primary/90">
+                        Explorar Materias
+                    </a>
+                    <a href="tutorias.html" class="rounded-md border-2 border-primary px-6 py-3 text-lg font-medium text-primary hover:bg-primary/10">
+                        Ver Tutorías
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="w-full py-20">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">¿Qué Ofrece EduGuate?</h2>
+                <p class="text-lg text-gray-600">Una plataforma completa para tu educación, diseñada pensando en ti</p>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                        <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Contenidos por Materia</h3>
+                    <p class="text-gray-600">Accede a lecciones de Matemáticas, Lenguaje, Ciencias y más, organizadas por nivel educativo</p>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10">
+                        <svg class="h-6 w-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Tutorías Personalizadas</h3>
+                    <p class="text-gray-600">Conecta con tutores voluntarios que te ayudarán a resolver tus dudas y mejorar tu aprendizaje</p>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                        <svg class="h-6 w-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Evaluaciones Interactivas</h3>
+                    <p class="text-gray-600">Pon a prueba tus conocimientos con evaluaciones y recibe retroalimentación inmediata</p>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                        <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Calendario de Tutorías</h3>
+                    <p class="text-gray-600">Programa sesiones de tutoría según tu disponibilidad y mantén un seguimiento de tu progreso</p>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10">
+                        <svg class="h-6 w-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Comunidad Educativa</h3>
+                    <p class="text-gray-600">Participa en foros, comparte dudas y aprende junto a otros estudiantes de toda Guatemala</p>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                        <svg class="h-6 w-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Acceso Offline</h3>
+                    <p class="text-gray-600">Descarga contenidos para estudiar sin conexión, ideal para zonas con conectividad limitada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section id="materias" class="w-full bg-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Materias Disponibles</h2>
+                <p class="text-lg text-gray-600">Contenido educativo organizado por área de conocimiento</p>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-lg">
+                    <div class="mb-4 h-2 w-full rounded-full bg-blue-500"></div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Matemáticas</h3>
+                    <p class="mb-4 text-gray-600">Aritmética, álgebra, geometría y más</p>
+                    <a href="materias.html?subject=matematicas" class="inline-block w-full rounded-md border-2 border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Ver Contenidos
+                    </a>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-lg">
+                    <div class="mb-4 h-2 w-full rounded-full bg-green-500"></div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Lenguaje</h3>
+                    <p class="mb-4 text-gray-600">Gramática, ortografía y comprensión lectora</p>
+                    <a href="materias.html?subject=lenguaje" class="inline-block w-full rounded-md border-2 border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Ver Contenidos
+                    </a>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-lg">
+                    <div class="mb-4 h-2 w-full rounded-full bg-purple-500"></div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Ciencias</h3>
+                    <p class="mb-4 text-gray-600">Biología, química, física y ciencias naturales</p>
+                    <a href="materias.html?subject=ciencias" class="inline-block w-full rounded-md border-2 border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Ver Contenidos
+                    </a>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-lg">
+                    <div class="mb-4 h-2 w-full rounded-full bg-orange-500"></div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Ciencias Sociales</h3>
+                    <p class="mb-4 text-gray-600">Historia, geografía y estudios sociales</p>
+                    <a href="materias.html?subject=ciencias-sociales" class="inline-block w-full rounded-md border-2 border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Ver Contenidos
+                    </a>
+                </div>
+
+                <div class="rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-lg">
+                    <div class="mb-4 h-2 w-full rounded-full bg-pink-500"></div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">Inglés</h3>
+                    <p class="mb-4 text-gray-600">Vocabulario, gramática y conversación</p>
+                    <a href="materias.html?subject=ingles" class="inline-block w-full rounded-md border-2 border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Ver Contenidos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="tutorias" class="w-full py-20">
+        <div class="container mx-auto px-4">
+            <div class="mx-auto max-w-3xl rounded-2xl bg-gradient-to-br from-primary to-secondary p-12 text-center">
+                <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+                    Explora Todo el Contenido Educativo
+                </h2>
+                <p class="mb-8 text-lg text-white/90">
+                    Acceso libre y gratuito a todos los recursos educativos de EduGuate
+                </p>
+                <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <a href="materias.html" class="rounded-md bg-white px-6 py-3 text-lg font-medium text-primary hover:bg-gray-100">
+                        Ver Todas las Materias
+                    </a>
+                    <a href="evaluaciones.html" class="rounded-md border-2 border-white px-6 py-3 text-lg font-medium text-white hover:bg-white/10">
+                        Tomar Evaluaciones
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="w-full border-t bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid gap-8 md:grid-cols-3">
+                <div>
+                    <div class="mb-4 flex items-center gap-2">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">EduGuate</span>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        Educación gratuita y accesible para todos los estudiantes de Guatemala
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-semibold text-gray-900">Enlaces Rápidos</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="materias.html" class="hover:text-gray-900">Materias</a></li>
+                        <li><a href="tutorias.html" class="hover:text-gray-900">Tutorías</a></li>
+                        <li><a href="foro.html" class="hover:text-gray-900">Comunidad</a></li>
+                        <li><a href="evaluaciones.html" class="hover:text-gray-900">Evaluaciones</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-semibold text-gray-900">Contacto</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>Email: contacto@eduguate.gt</li>
+                        <li>Teléfono: +502 1234-5678</li>
+                        <li>Guatemala, Guatemala</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-gray-300 pt-8 text-center text-sm text-gray-600">
+                <p>&copy; 2025 EduGuate. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

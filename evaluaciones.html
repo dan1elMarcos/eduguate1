@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluaciones - EduGuate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        accent: '#06B6D4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900">EduGuate</span>
+            </a>
+
+            <nav class="hidden items-center gap-6 md:flex">
+                <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Inicio</a>
+                <a href="materias.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Materias</a>
+                <a href="evaluaciones.html" class="text-sm font-medium text-primary">Evaluaciones</a>
+                <a href="tutorias.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Tutorías</a>
+                <a href="foro.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Comunidad</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h1 class="mb-2 text-3xl font-bold text-gray-900">Evaluaciones</h1>
+            <p class="text-gray-600">Pon a prueba tus conocimientos con nuestras evaluaciones interactivas</p>
+        </div>
+
+        <!-- Evaluations Grid -->
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Math Evaluation -->
+            <div class="rounded-lg border bg-white p-6 shadow-sm">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                        <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">10 preguntas</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Matemáticas Básicas</h3>
+                <p class="mb-4 text-sm text-gray-600">Evaluación de sumas, restas y multiplicación</p>
+                <div class="mb-4 flex items-center gap-2 text-sm text-gray-600">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>15 minutos</span>
+                </div>
+                <button onclick="startEvaluation('matematicas')" class="w-full rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
+                    Comenzar Evaluación
+                </button>
+            </div>
+
+            <!-- Language Evaluation -->
+            <div class="rounded-lg border bg-white p-6 shadow-sm">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-green-100">
+                        <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800">8 preguntas</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Gramática Española</h3>
+                <p class="mb-4 text-sm text-gray-600">Evaluación de sustantivos, verbos y ortografía</p>
+                <div class="mb-4 flex items-center gap-2 text-sm text-gray-600">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>12 minutos</span>
+                </div>
+                <button onclick="startEvaluation('lenguaje')" class="w-full rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700">
+                    Comenzar Evaluación
+                </button>
+            </div>
+
+            <!-- Science Evaluation -->
+            <div class="rounded-lg border bg-white p-6 shadow-sm">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-100">
+                        <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800">12 preguntas</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Ciencias Naturales</h3>
+                <p class="mb-4 text-sm text-gray-600">Evaluación del sistema solar y ciclo del agua</p>
+                <div class="mb-4 flex items-center gap-2 text-sm text-gray-600">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>18 minutos</span>
+                </div>
+                <button onclick="startEvaluation('ciencias')" class="w-full rounded-md bg-purple-600 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700">
+                    Comenzar Evaluación
+                </button>
+            </div>
+        </div>
+
+        <!-- Evaluation Modal -->
+        <div id="evaluation-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
+            <div class="w-full max-w-2xl rounded-lg bg-white p-8 shadow-xl">
+                <div class="mb-6 flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-gray-900" id="eval-title">Evaluación</h2>
+                    <button onclick="closeEvaluation()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="question-container">
+                    <!-- Questions will be populated here -->
+                </div>
+
+                <div class="mt-6 flex items-center justify-between">
+                    <span class="text-sm text-gray-600" id="question-counter">Pregunta 1 de 10</span>
+                    <button onclick="submitEvaluation()" class="rounded-md bg-primary px-6 py-2 text-sm font-medium text-white hover:bg-primary/90">
+                        Enviar Respuestas
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="results-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
+            <div class="w-full max-w-md rounded-lg bg-white p-8 shadow-xl text-center">
+                <div class="mb-4 flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-green-100">
+                    <svg class="h-10 w-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h2 class="mb-2 text-2xl font-bold text-gray-900">¡Evaluación Completada!</h2>
+                <p class="mb-6 text-gray-600">Tu calificación:</p>
+                <div class="mb-6 text-5xl font-bold text-primary" id="score-display">0/10</div>
+                <button onclick="closeResults()" class="w-full rounded-md bg-primary px-6 py-2 text-sm font-medium text-white hover:bg-primary/90">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const evaluations = {
+            matematicas: [
+                { question: '¿Cuánto es 5 + 3?', options: ['6', '7', '8', '9'], correct: 2 },
+                { question: '¿Cuánto es 10 - 4?', options: ['5', '6', '7', '8'], correct: 1 },
+                { question: '¿Cuánto es 3 × 4?', options: ['10', '11', '12', '13'], correct: 2 },
+                { question: '¿Cuánto es 15 ÷ 3?', options: ['3', '4', '5', '6'], correct: 2 },
+                { question: '¿Cuánto es 7 + 8?', options: ['14', '15', '16', '17'], correct: 1 },
+            ],
+            lenguaje: [
+                { question: '¿Qué es un sustantivo?', options: ['Una acción', 'Un nombre', 'Una cualidad', 'Un lugar'], correct: 1 },
+                { question: '¿Cuál es la vocal?', options: ['B', 'C', 'E', 'F'], correct: 2 },
+                { question: '¿Cómo se escribe correctamente?', options: ['Casa', 'Kasa', 'Caza', 'Kaza'], correct: 0 },
+            ],
+            ciencias: [
+                { question: '¿Cuántos planetas hay en el sistema solar?', options: ['7', '8', '9', '10'], correct: 1 },
+                { question: '¿Qué planeta está más cerca del Sol?', options: ['Venus', 'Tierra', 'Mercurio', 'Marte'], correct: 2 },
+                { question: '¿Qué es la evaporación?', options: ['Agua que cae', 'Agua que se calienta', 'Agua que se congela', 'Agua que se evapora'], correct: 3 },
+            ],
+        };
+
+        let currentEvaluation = null;
+        let userAnswers = [];
+
+        function startEvaluation(subject) {
+            currentEvaluation = subject;
+            userAnswers = [];
+            
+            const modal = document.getElementById('evaluation-modal');
+            const title = document.getElementById('eval-title');
+            const container = document.getElementById('question-container');
+            
+            const titles = {
+                matematicas: 'Evaluación de Matemáticas',
+                lenguaje: 'Evaluación de Lenguaje',
+                ciencias: 'Evaluación de Ciencias'
+            };
+            
+            title.textContent = titles[subject];
+            
+            const questions = evaluations[subject];
+            container.innerHTML = '';
+            
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'mb-6';
+                questionDiv.innerHTML = `
+                    <p class="mb-3 font-medium text-gray-900">${index + 1}. ${q.question}</p>
+                    <div class="space-y-2">
+                        ${q.options.map((opt, i) => `
+                            <label class="flex items-center rounded-md border p-3 cursor-pointer hover:bg-gray-50">
+                                <input type="radio" name="question-${index}" value="${i}" class="mr-3" onchange="saveAnswer(${index}, ${i})">
+                                <span class="text-gray-700">${opt}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+            
+            document.getElementById('question-counter').textContent = `${questions.length} preguntas`;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function saveAnswer(questionIndex, answerIndex) {
+            userAnswers[questionIndex] = answerIndex;
+        }
+
+        function submitEvaluation() {
+            const questions = evaluations[currentEvaluation];
+            let correct = 0;
+            
+            questions.forEach((q, index) => {
+                if (userAnswers[index] === q.correct) {
+                    correct++;
+                }
+            });
+            
+            document.getElementById('score-display').textContent = `${correct}/${questions.length}`;
+            
+            closeEvaluation();
+            document.getElementById('results-modal').classList.remove('hidden');
+            document.getElementById('results-modal').classList.add('flex');
+        }
+
+        function closeEvaluation() {
+            document.getElementById('evaluation-modal').classList.add('hidden');
+            document.getElementById('evaluation-modal').classList.remove('flex');
+        }
+
+        function closeResults() {
+            document.getElementById('results-modal').classList.add('hidden');
+            document.getElementById('results-modal').classList.remove('flex');
+        }
+    </script>
+</body>
+</html>

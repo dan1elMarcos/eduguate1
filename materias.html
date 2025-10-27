@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materias - EduGuate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        accent: '#06B6D4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900">EduGuate</span>
+            </a>
+
+            <nav class="hidden items-center gap-6 md:flex">
+                <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Inicio</a>
+                <a href="materias.html" class="text-sm font-medium text-primary">Materias</a>
+                <a href="evaluaciones.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Evaluaciones</a>
+                <a href="tutorias.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Tutorías</a>
+                <a href="foro.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Comunidad</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h1 class="mb-2 text-3xl font-bold text-gray-900">Materias Educativas</h1>
+            <p class="text-gray-600">Explora contenidos organizados por materia y nivel educativo</p>
+        </div>
+
+        <!-- Filter by Level -->
+        <div class="mb-8 flex flex-wrap gap-2">
+            <button onclick="filterByLevel('all')" class="level-filter rounded-md bg-primary px-4 py-2 text-sm font-medium text-white">
+                Todos los Niveles
+            </button>
+            <button onclick="filterByLevel('primaria')" class="level-filter rounded-md bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300">
+                Primaria
+            </button>
+            <button onclick="filterByLevel('basico')" class="level-filter rounded-md bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300">
+                Básico
+            </button>
+            <button onclick="filterByLevel('diversificado')" class="level-filter rounded-md bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300">
+                Diversificado
+            </button>
+        </div>
+
+        <!-- Subjects Grid -->
+        <div id="subjects-container" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Matemáticas -->
+            <div class="subject-card rounded-lg border bg-white p-6 shadow-sm" data-subject="matematicas">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                        <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">15 lecciones</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Matemáticas</h3>
+                <p class="mb-4 text-sm text-gray-600">Aritmética, álgebra, geometría y cálculo</p>
+                <div class="mb-4 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Primaria</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Básico</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Diversificado</span>
+                </div>
+                <a href="contenido.html?subject=matematicas" class="inline-block w-full rounded-md bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-700">
+                    Ver Contenidos
+                </a>
+            </div>
+
+            <!-- Lenguaje -->
+            <div class="subject-card rounded-lg border bg-white p-6 shadow-sm" data-subject="lenguaje">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-green-100">
+                        <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800">12 lecciones</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Lenguaje</h3>
+                <p class="mb-4 text-sm text-gray-600">Gramática, ortografía y comprensión lectora</p>
+                <div class="mb-4 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Primaria</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Básico</span>
+                </div>
+                <a href="contenido.html?subject=lenguaje" class="inline-block w-full rounded-md bg-green-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-green-700">
+                    Ver Contenidos
+                </a>
+            </div>
+
+            <!-- Ciencias -->
+            <div class="subject-card rounded-lg border bg-white p-6 shadow-sm" data-subject="ciencias">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-100">
+                        <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800">18 lecciones</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Ciencias</h3>
+                <p class="mb-4 text-sm text-gray-600">Biología, química, física y ciencias naturales</p>
+                <div class="mb-4 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Primaria</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Básico</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Diversificado</span>
+                </div>
+                <a href="contenido.html?subject=ciencias" class="inline-block w-full rounded-md bg-purple-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-purple-700">
+                    Ver Contenidos
+                </a>
+            </div>
+
+            <!-- Ciencias Sociales -->
+            <div class="subject-card rounded-lg border bg-white p-6 shadow-sm" data-subject="ciencias-sociales">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-100">
+                        <svg class="h-6 w-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-800">10 lecciones</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Ciencias Sociales</h3>
+                <p class="mb-4 text-sm text-gray-600">Historia, geografía y estudios sociales</p>
+                <div class="mb-4 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Básico</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Diversificado</span>
+                </div>
+                <a href="contenido.html?subject=ciencias-sociales" class="inline-block w-full rounded-md bg-orange-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-orange-700">
+                    Ver Contenidos
+                </a>
+            </div>
+
+            <!-- Inglés -->
+            <div class="subject-card rounded-lg border bg-white p-6 shadow-sm" data-subject="ingles">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-pink-100">
+                        <svg class="h-6 w-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-800">14 lecciones</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Inglés</h3>
+                <p class="mb-4 text-sm text-gray-600">Vocabulario, gramática y conversación</p>
+                <div class="mb-4 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Primaria</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Básico</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Diversificado</span>
+                </div>
+                <a href="contenido.html?subject=ingles" class="inline-block w-full rounded-md bg-pink-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-pink-700">
+                    Ver Contenidos
+                </a>
+            </div>
+
+            <!-- Computación -->
+            <div class="subject-card rounded-lg border bg-white p-6 shadow-sm" data-subject="computacion">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-100">
+                        <svg class="h-6 w-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="rounded-full bg-cyan-100 px-3 py-1 text-xs font-medium text-cyan-800">8 lecciones</span>
+                </div>
+                <h3 class="mb-2 text-xl font-semibold text-gray-900">Computación</h3>
+                <p class="mb-4 text-sm text-gray-600">Informática básica y herramientas digitales</p>
+                <div class="mb-4 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Básico</span>
+                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">Diversificado</span>
+                </div>
+                <a href="contenido.html?subject=computacion" class="inline-block w-full rounded-md bg-cyan-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-cyan-700">
+                    Ver Contenidos
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function filterByLevel(level) {
+            const cards = document.querySelectorAll('.subject-card');
+            const buttons = document.querySelectorAll('.level-filter');
+            
+            // Update button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            event.target.classList.add('bg-primary', 'text-white');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (level === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const levels = Array.from(card.querySelectorAll('.rounded-full.bg-gray-100'))
+                        .map(span => span.textContent.toLowerCase().trim());
+                    card.style.display = levels.includes(level) ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
